@@ -9,8 +9,8 @@ rspec.addResource(lan)
 prefixForIP = "192.168.1."
 local_ip_count = 0
 
-for i in range(2):
-  node = request.XenVM("node")
+for i in range(3):
+  node = request.XenVM("node-" + str(i))
   node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU16-64-STD"
   node.routable_control_ip = "true"
   local_ip_count += 1                    
