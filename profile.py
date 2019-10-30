@@ -18,7 +18,7 @@ for i in range(2):
   iface.component_id = "eth1"
   iface.addAddress(RSpec.IPv4Address(prefixForIP + str(local_ip_count), "255.255.255.0"))
   lan.addInterface(iface)
-  node.addService(RSpec.Execute("sh", "sudo bash /local/repository/setup_scripts/general.sh"))
+  node.addService(RSpec.Execute("sh", "sudo bash /local/repository/general.sh"))
   rspec.addResource(node)
 
 # Print the RSpec to the enclosing page.
