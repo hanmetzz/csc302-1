@@ -2,6 +2,7 @@
 #include <string.h>
 #include <sys/socket.h>
 #include <netinet/ip.h>
+#include <unistd.h>
 
 void main() {
     struct sockaddr_in server;
