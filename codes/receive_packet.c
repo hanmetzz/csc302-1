@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/socket.h>
 #include <netinet/ip.h>
@@ -19,8 +20,10 @@ void main() {
     server.sin_addr.s_addr = htonl(INADDR_ANY);
     server.sin_port = htons(9090);
 
-    if (bind(sock, (struct sockaddr *) &server, sizeof(server)) < 0)
-        error("ERROR on binding");
+    if (bind(sock, (struct sockaddr *) &server, sizeof(server)) < 0) {
+        perror("ERROR on binding");
+        exit(1);
+    }
 
     /* the server receives and processes UDP packets through the socket */
     while (1) {
