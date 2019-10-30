@@ -22,4 +22,4 @@ for i in range(3):
   rspec.addResource(node)
 
 # Print the RSpec to the enclosing page.
-pc.printRequestRSpec(request)
+pc.printRequestRSpec(rspec)
