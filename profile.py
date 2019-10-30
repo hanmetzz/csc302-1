@@ -2,9 +2,9 @@ import geni.portal as portal
 import geni.rspec.pg as pg
 
 pc = portal.Context()
-request = pc.makeRequestRSpec()
+rspec = pg.Request()
  
-lan = RSpec.LAN()
+lan = pg.LAN()
 rspec.addResource(lan)
 prefixForIP = "192.168.1."
 local_ip_count = 0
@@ -16,9 +16,9 @@ for i in range(3):
   local_ip_count += 1                    
   iface = node.addInterface("if" + str(local_ip_count))
   iface.component_id = "eth1"
-  iface.addAddress(RSpec.IPv4Address(prefixForIP + str(local_ip_count), "255.255.255.0"))
+  iface.addAddress(pg.IPv4Address(prefixForIP + str(local_ip_count), "255.255.255.0"))
   lan.addInterface(iface)
-  node.addService(RSpec.Execute("sh", "sudo bash /local/repository/general.sh"))
+  node.addService(pg.Execute("sh", "sudo bash /local/repository/general.sh"))
   rspec.addResource(node)
 
 # Print the RSpec to the enclosing page.
