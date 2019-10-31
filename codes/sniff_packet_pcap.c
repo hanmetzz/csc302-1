@@ -12,7 +12,7 @@ int main()
   pcap_t *handle;
   char errbuf[PCAP_ERRBUF_SIZE];
   struct bpf_program fp;
-  char filter_exp[] = "ip proto icmp";
+  char filter_exp[] = "src port 9090";
   bpf_u_int32 net;
 
   // Step 1: Open live pcap session on NIC with name eth3
