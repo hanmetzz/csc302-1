@@ -10,6 +10,9 @@ sudo bash -c "echo 'ANACONDA_HOME=/opt/anaconda3/' >> /etc/profile"
 sudo bash -c "echo 'PATH=/opt/anaconda3/bin:$PATH' >> /etc/profile"
 
 sudo apt-get install -y netwox
+sudo apt-get install -y xinetd telnetd tcpd
+sudo bash -c "echo 'telnet stream tcp nowait telnetd /usr/sbin/tcpd /usr/sbin/in.telnetd' >> /etc/inetd.conf"
+sudo /etc/init.d/xinetd restart
 
 sudo useradd -m -s /bin/bash seed
 sudo echo "seed:dees" | chpasswd
