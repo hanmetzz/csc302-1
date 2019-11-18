@@ -14,6 +14,8 @@ sudo apt-get install -y xinetd telnetd tcpd
 sudo bash -c "echo 'telnet stream tcp nowait telnetd /usr/sbin/tcpd /usr/sbin/in.telnetd' >> /etc/inetd.conf"
 sudo /etc/init.d/xinetd restart
 
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -q -y tshark
+
 sudo useradd -m -s /bin/bash seed
 sudo echo "seed:dees" | chpasswd
 sudo usermod -a -G sudo seed
