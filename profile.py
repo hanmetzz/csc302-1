@@ -12,7 +12,7 @@ local_ip_count = 0
 for i in range(3):
   node = request.XenVM("node-" + str(i))
   node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU16-64-STD"
-  node.routable_control_ip = "true"
+  #node.routable_control_ip = "true"
   local_ip_count += 1                    
   iface = node.addInterface("if" + str(local_ip_count))
   iface.component_id = "eth1"
