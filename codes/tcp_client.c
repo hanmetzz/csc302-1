@@ -2,6 +2,7 @@
 #include <string.h>
 #include <sys/socket.h>
 #include <netinet/ip.h>
+#include <arpa/inet.h>
 
 int main()
 {
@@ -12,7 +13,7 @@ int main()
   struct sockaddr_in dest;
   memset(&dest, 0, sizeof(struct sockaddr_in));        
   dest.sin_family = AF_INET;                        
-  dest.sin_addr.s_addr = inet_addr("10.0.2.17");
+  dest.sin_addr.s_addr = inet_addr("192.168.1.2");
   dest.sin_port = htons(9090);                     
 
   // Step 3: Connect to the server
