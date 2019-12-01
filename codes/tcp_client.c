@@ -27,7 +27,7 @@ int main()
   write(sockfd, buffer2, strlen(buffer2));
 
   // Step 5: Close the connection
-  close(sockefd);                               
+  close(sockfd);                               
 
   return 0;
 }
